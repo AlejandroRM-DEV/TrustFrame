@@ -9,6 +9,10 @@ from rich.progress import Progress, BarColumn, TextColumn, FileSizeColumn, Trans
 from rich.console import Console
 from rich.table import Table
 from rich import box
+from rich.panel import Panel
+from rich.align import Align
+from rich.text import Text
+import pyfiglet
 
 app = typer.Typer()
 
@@ -24,14 +28,15 @@ class PerceptualAlgorithm(str, Enum):
 
 
 class CryptoHasher:
-    CryptoAlgorithmFunc = {
+    AlgorithmFunc = {
         CryptoAlgorithm.SHA256: hashlib.sha256,
         CryptoAlgorithm.SHA384: hashlib.sha384,
         CryptoAlgorithm.SHA512: hashlib.sha512
     }
 
-    def __init__(self, crypto_algorithm):
-        self.hash_func = self.CryptoAlgorithmFunc[crypto_algorithm]
+    def __init__(self, algorithm):
+        self.hash_func = self.AlgorithmFunc[algorithm]
+        self.algorithm = algorithm.name
 
     def calculate_hash(self, file_path):
         if not os.path.exists(file_path):
@@ -42,7 +47,7 @@ class CryptoHasher:
 
         with open(file_path, "rb") as f:
             with Progress(
-                    TextColumn("[bold blue]Processing", justify="right"),
+                    TextColumn(f"[bold blue]Calculating {self.algorithm}", justify="right"),
                     BarColumn(bar_width=None),
                     "[progress.percentage]{task.percentage:>3.1f}%",
                     "•",
@@ -68,11 +73,15 @@ def analyze(reference: Annotated[Path, typer.Argument(exists=True, file_okay=Tru
             perceptual_algorithm: Annotated[PerceptualAlgorithm, typer.Option()] = PerceptualAlgorithm.PHASH
             ):
     try:
+        console = Console()
+
+        banner = pyfiglet.figlet_format("TrustFrame", font="slant")
+        aligned = Align(banner, align="center")
+        console.print(Panel(aligned, subtitle="Version 1.0.0", expand=True))
+
         hasher = CryptoHasher(crypto_algorithm)
         original_hash = hasher.calculate_hash(reference)
         evidence_hash = hasher.calculate_hash(evidence)
-
-        console = Console()
 
         table = Table(title=f"{crypto_algorithm.name} Hash Summary", box=box.ROUNDED, expand=True)
         table.add_column("File", no_wrap=True)
