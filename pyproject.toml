@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "trustframe"
+version = "0.1.0"
+description = "TrustFrame is a video analysis tool that compares two video files using both cryptographic and perceptual hashing techniques"
+authors = ["Alejandro Ramirez Muñoz"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+opencv-python = "^4.11.0.86"
+imagehash = "^4.3.2"
+pyfiglet = "^1.0.2"
+typer = {extras = ["all"], version = "^0.15.4"}
+pillow = "^11.2.1"
+rich = "^14.0.0"
+
+[tool.poetry.scripts]
+trustframe = "trustframe.cli:main"
+
+[tool.poetry.urls]
+repository = "https://github.com/AlejandroRM-DEV/TrustFrame"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
