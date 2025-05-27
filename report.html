@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {color: #008080; text-decoration-color: #008080; font-weight: bold}
+.r2 {font-style: italic}
+.r3 {font-weight: bold}
+.r4 {color: #800000; text-decoration-color: #800000}
+.r5 {color: #005faf; text-decoration-color: #005faf; font-weight: bold}
+.r6 {color: #808000; text-decoration-color: #808000; font-weight: bold}
+.r7 {color: #008000; text-decoration-color: #008000}
+.r8 {color: #808000; text-decoration-color: #808000}
+.r9 {color: #000080; text-decoration-color: #000080}
+.r10 {color: #800080; text-decoration-color: #800080}
+.r11 {color: #008000; text-decoration-color: #008000; font-weight: bold}
+.r12 {color: #800000; text-decoration-color: #800000; font-weight: bold}
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code style="font-family:inherit">╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                      ______                __  ______                                            │
+│                     /_  __/______  _______/ /_/ ____/________ _____ ___  ___                     │
+│                      / / / ___/ / / / ___/ __/ /_  / ___/ __ `/ __ `__ \/ _ \                    │
+│                     / / / /  / /_/ (__  ) /_/ __/ / /  / /_/ / / / / / /  __/                    │
+│                    /_/ /_/   \__,_/____/\__/_/   /_/   \__,_/_/ /_/ /_/\___/                     │
+│                                                                                                  │
+│                                                                                                  │
+╰────────────────────────────────────── Video Analysis Tool ───────────────────────────────────────╯
+
+<span class="r1">🔐 Cryptographic Hash Analysis (SHA256)</span>
+<span class="r2">                                        SHA256 Hash Summary                                         </span>
+╭────────────────────────────────────────────┬─────────────────────────────────────────────┬───────╮
+│<span class="r3"> Reference                                  </span>│<span class="r3"> Evidence                                    </span>│<span class="r3"> Match </span>│
+├────────────────────────────────────────────┼─────────────────────────────────────────────┼───────┤
+│<span class="r4"> 6235017edb3f692d01308a2c1c35002ec41d00b3ac </span>│<span class="r4"> 0d90290cfb2c247a70ba163e7791745f307e5592485 </span>│<span class="r4"> No    </span>│
+│<span class="r4"> 247f72ba5c646ae53b7f9e                     </span>│<span class="r4"> 7fd63f0e049a42092620d                       </span>│<span class="r4">       </span>│
+╰────────────────────────────────────────────┴─────────────────────────────────────────────┴───────╯
+
+<span class="r1">👁️  Perceptual Hash Analysis (PHASH)</span>
+
+<span class="r5">Getting video information...</span>
+<span class="r2">                                         Video Information                                          </span>
+╭──────────────────────────────────────────┬──────────────────────┬───────────┬────────────────────╮
+│<span class="r3"> Video                                    </span>│<span class="r3">         Total Frames </span>│<span class="r3">       FPS </span>│<span class="r3">       Duration (s) </span>│
+├──────────────────────────────────────────┼──────────────────────┼───────────┼────────────────────┤
+│ Reference (reference.mp4)                │                  337 │     25.00 │              13.48 │
+│ Evidence (evidence.avi)                  │                  338 │     25.00 │              13.52 │
+╰──────────────────────────────────────────┴──────────────────────┴───────────┴────────────────────╯
+
+<span class="r6">Analyzing all frames from both videos</span>
+
+<span class="r5">Analyzing reference video</span>
+
+<span class="r5">Analyzing evidence video</span>
+
+<span class="r1">🔬 Advanced Sequence Analysis</span>
+<span class="r2">                                     Sequence Analysis Summary                                      </span>
+╭───────────────────┬─────────┬────────────────────────────────────────────────────────────────────╮
+│<span class="r3"> Operation Type    </span>│<span class="r3">   Count </span>│<span class="r3"> Description                                                        </span>│
+├───────────────────┼─────────┼────────────────────────────────────────────────────────────────────┤
+│<span class="r7"> Matches           </span>│<span class="r7">     325 </span>│<span class="r7"> Identical frames in same position                                  </span>│
+│<span class="r8"> Substitutions     </span>│<span class="r8">      12 </span>│<span class="r8"> Different frames in same position                                  </span>│
+│<span class="r9"> Insertions        </span>│<span class="r9">       1 </span>│<span class="r9"> Extra frames in evidence video                                     </span>│
+│<span class="r4"> Deletions         </span>│<span class="r4">       0 </span>│<span class="r4"> Missing frames from evidence video                                 </span>│
+│<span class="r10"> Edit Distance     </span>│<span class="r10">      13 </span>│<span class="r10"> Total operations needed to transform reference to evidence         </span>│
+╰───────────────────┴─────────┴────────────────────────────────────────────────────────────────────╯
+
+<span class="r1">📋 Detailed Alignment</span>
+                                                                                                    
+ <span class="r3"> Operation      </span> <span class="r3">  Ref Frame  </span> <span class="r3">  Ev Frame  </span> <span class="r3"> Similarity  </span> <span class="r3"> Ref Hash           </span> <span class="r3"> Ev Hash           </span> 
+ ────────────────────────────────────────────────────────────────────────────────────────────────── 
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       1            1        <span class="r7">  100.0%   </span>   b92de6b2d2f00c65     b92de6b2d2f00c65   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       2            2        <span class="r7">  100.0%   </span>   b92de6b2d2f00c65     b92de6b2d2f00c65   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       3            3        <span class="r7">  100.0%   </span>   b92de4b2d2f00c67     b92de4b2d2f00c67   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       4            4        <span class="r7">  100.0%   </span>   b92de4b3d2700c67     b92de4b3d2700c67   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       5            5        <span class="r7">  100.0%   </span>   b92de4b3d2700c67     b92de4b3d2700c67   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       6            6        <span class="r7">  100.0%   </span>   b92de4b3c2700ce7     b92de4b3c2700ce7   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       7            7        <span class="r7">  100.0%   </span>   a92decb3c2701cc7     a92decb3c2701cc7   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       8            8        <span class="r7">  100.0%   </span>   a92decb3c2701cc7     a92decb3c2701cc7   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>       9            9        <span class="r7">  100.0%   </span>   a92decb3c2703c47     a92decb3c2703c47   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      10            10       <span class="r7">  100.0%   </span>   a92dec33c2f03c47     a92dec33c2f03c47   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      11            11       <span class="r7">  100.0%   </span>   a92dec33c2f0384f     a92dec33c2f0384f   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      12            12       <span class="r7">  100.0%   </span>   a92dec33c2f03c6c     a92dec33c2f03c6c   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      13            13       <span class="r7">  100.0%   </span>   a92dec33c2e03c6d     a92dec33c2e03c6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      14            14       <span class="r7">  100.0%   </span>   a92dec32c3e03c6d     a92dec32c3e03c6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      15            15       <span class="r7">  100.0%   </span>   a92dec32c3e03c6d     a92dec32c3e03c6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      16            16       <span class="r7">  100.0%   </span>   a92dec32c3e02d6d     a92dec32c3e02d6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      17            17       <span class="r7">  100.0%   </span>   a92dec32c3e02d6d     a92dec32c3e02d6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      18            18       <span class="r7">  100.0%   </span>   a92dec32c6e02d6e     a92dec32c6e02d6e   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      19            19       <span class="r7">  100.0%   </span>   a92dec32c6e02d6e     a92dec32c6e02d6e   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      20            20       <span class="r7">  100.0%   </span>   a92de832c7e02d6d     a92de832c7e02d6d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      21            21       <span class="r7">  100.0%   </span>   ad2de832c7e02d6c     ad2de832c7e02d6c   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      22            22       <span class="r7">  100.0%   </span>   ad2de832c6e02d7c     ad2de832c6e02d7c   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      23            23       <span class="r7">  100.0%   </span>   ad2de832c7e02c7c     ad2de832c7e02c7c   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      24            24       <span class="r7">  100.0%   </span>   ad2de832c7e02c7c     ad2de832c7e02c7c   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      25            25       <span class="r7">   96.9%   </span>   ad2de832c6e03c3d     ad2de832c6e03c7c   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      26            26       <span class="r7">  100.0%   </span>   ad2de832c6e03c3d     ad2de832c6e03c3d   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      27            27       <span class="r7">  100.0%   </span>   ad2de832c6f03c39     ad2de832c6f03c39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      28            28       <span class="r7">  100.0%   </span>   ad2de832c6f03c39     ad2de832c6f03c39   
+ <span class="r3"> </span><span class="r12">INSERTION     </span><span class="r3"> </span>      ---           29       <span class="r4">   0.0%    </span>   ---                  ad2de832c6e03d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      29            30       <span class="r7">  100.0%   </span>   ad2de832c6e03d39     ad2de832c6e03d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      30            31       <span class="r7">  100.0%   </span>   ad2de832c6e03d39     ad2de832c6e03d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      31            32       <span class="r7">  100.0%   </span>   ad2de832cee22939     ad2de832cee22939   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      32            33       <span class="r7">  100.0%   </span>   ad2de832cee02d39     ad2de832cee02d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      33            34       <span class="r7">  100.0%   </span>   ad2de832cee02d39     ad2de832cee02d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      34            35       <span class="r7">  100.0%   </span>   ad2de832cee02d39     ad2de832cee02d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      35            36       <span class="r7">  100.0%   </span>   ad2de832cee08d39     ad2de832cee08d39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      36            37       <span class="r7">  100.0%   </span>   af2de832c8e0cd39     af2de832c8e0cd39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      37            38       <span class="r7">  100.0%   </span>   ad2de832d8e0cd39     ad2de832d8e0cd39   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      38            39       <span class="r7">  100.0%   </span>   af2de832d8e0c563     af2de832d8e0c563   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      39            40       <span class="r7">  100.0%   </span>   af2de832d8b0c5c3     af2de832d8b0c5c3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      40            41       <span class="r7">  100.0%   </span>   af2de836d830c5c3     af2de836d830c5c3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      41            42       <span class="r7">  100.0%   </span>   af2de836d830c5c3     af2de836d830c5c3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      42            43       <span class="r7">  100.0%   </span>   af2de036dc30c5c3     af2de036dc30c5c3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      43            44       <span class="r7">  100.0%   </span>   af2de036dc300de3     af2de036dc300de3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      44            45       <span class="r7">  100.0%   </span>   af2de032dc302de3     af2de032dc302de3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      45            46       <span class="r7">  100.0%   </span>   af2de132cc380de3     af2de132cc380de3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      46            47       <span class="r7">  100.0%   </span>   af2de132cc382d63     af2de132cc382d63   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      47            48       <span class="r7">  100.0%   </span>   af2de132cc382d63     af2de132cc382d63   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      48            49       <span class="r7">  100.0%   </span>   af2de132cc380d73     af2de132cc380d73   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      49            50       <span class="r7">  100.0%   </span>   af2de132cc380d73     af2de132cc380d73   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      50            51       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      51            52       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      52            53       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      53            54       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      54            55       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      55            56       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      56            57       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      57            58       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      58            59       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      59            60       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      60            61       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      61            62       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      62            63       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      63            64       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      64            65       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      65            66       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      66            67       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      67            68       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      68            69       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      69            70       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      70            71       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      71            72       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      72            73       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      73            74       <span class="r7">  100.0%   </span>   af2de132dc380d33     af2de132dc380d33   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      74            75       <span class="r7">   96.9%   </span>   af2de132dc380da3     af2de132dc380d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      75            76       <span class="r7">  100.0%   </span>   af2de132dc380da3     af2de132dc380da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      76            77       <span class="r7">  100.0%   </span>   af2de132dc380da3     af2de132dc380da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      77            78       <span class="r7">  100.0%   </span>   af2de132dc380da3     af2de132dc380da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      78            79       <span class="r7">  100.0%   </span>   af2de132dc380da3     af2de132dc380da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      79            80       <span class="r7">  100.0%   </span>   af2de132dc390da1     af2de132dc390da1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      80            81       <span class="r7">  100.0%   </span>   af2de132dc390da1     af2de132dc390da1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      81            82       <span class="r7">  100.0%   </span>   af2de132dc390da1     af2de132dc390da1   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      82            83       <span class="r7">   96.9%   </span>   af2de132dc390da1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      83            84       <span class="r7">   96.9%   </span>   af2de132dc390da1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      84            85       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      85            86       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      86            87       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      87            88       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      88            89       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      89            90       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      90            91       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      91            92       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      92            93       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      93            94       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      94            95       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      95            96       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      96            97       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      97            98       <span class="r7">  100.0%   </span>   af2de132dc380de1     af2de132dc380de1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      98            99       <span class="r7">  100.0%   </span>   af2de132dc390de0     af2de132dc390de0   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      99           100       <span class="r7">  100.0%   </span>   af2de132dc314de0     af2de132dc314de0   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      100          101       <span class="r7">   96.9%   </span>   af2de132dc3145e1     af2de132dc314de0   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      101          102       <span class="r7">  100.0%   </span>   af2de132dc31c5e0     af2de132dc31c5e0   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      102          103       <span class="r7">  100.0%   </span>   af2de132dc31c5e0     af2de132dc31c5e0   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      103          104       <span class="r7">  100.0%   </span>   af2de136dc31c5a0     af2de136dc31c5a0   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      104          105       <span class="r7">  100.0%   </span>   af2de136dc31c530     af2de136dc31c530   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      105          106       <span class="r7">  100.0%   </span>   af2de136d831c532     af2de136d831c532   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      106          107       <span class="r7">  100.0%   </span>   af2df136d8310d32     af2df136d8310d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      107          108       <span class="r7">  100.0%   </span>   af2df136c8310f32     af2df136c8310f32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      108          109       <span class="r7">  100.0%   </span>   af2df136c8310f32     af2df136c8310f32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      109          110       <span class="r7">  100.0%   </span>   af2df132cc314d32     af2df132cc314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      110          111       <span class="r7">  100.0%   </span>   af2df132cc314d32     af2df132cc314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      111          112       <span class="r7">  100.0%   </span>   af2df132cc314d32     af2df132cc314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      112          113       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      113          114       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      114          115       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      115          116       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      116          117       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      117          118       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      118          119       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      119          120       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      120          121       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      121          122       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      122          123       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      123          124       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      124          125       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      125          126       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      126          127       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      127          128       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      128          129       <span class="r7">  100.0%   </span>   af2df136cc314c32     af2df136cc314c32   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      129          130       <span class="r7">   96.9%   </span>   af2df136cc310d32     af2df136c8314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      130          131       <span class="r7">  100.0%   </span>   af2df136cc310d32     af2df136cc310d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      131          132       <span class="r7">  100.0%   </span>   af2df116cc314d32     af2df116cc314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      132          133       <span class="r7">  100.0%   </span>   af2df116cc314d32     af2df116cc314d32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      133          134       <span class="r7">  100.0%   </span>   af2df116cc314d32     af2df116cc314d32   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      134          135       <span class="r7">   96.9%   </span>   af2df136c8314d32     af2df036c8314f32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      135          136       <span class="r7">  100.0%   </span>   af2df036c8314f32     af2df036c8314f32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      136          137       <span class="r7">  100.0%   </span>   af2de036c831ceb2     af2de036c831ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      137          138       <span class="r7">  100.0%   </span>   af2de036d131ce92     af2de036d131ce92   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      138          139       <span class="r7">  100.0%   </span>   af2de036d131ce32     af2de036d131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      139          140       <span class="r7">  100.0%   </span>   af2df036c831ce32     af2df036c831ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      140          141       <span class="r7">  100.0%   </span>   af2df036c131ce32     af2df036c131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      141          142       <span class="r7">  100.0%   </span>   af2df036c131ce32     af2df036c131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      142          143       <span class="r7">  100.0%   </span>   af2df036c131ce32     af2df036c131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      143          144       <span class="r7">  100.0%   </span>   af2df036c131ce32     af2df036c131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      144          145       <span class="r7">  100.0%   </span>   af2df036c131ce32     af2df036c131ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      145          146       <span class="r7">  100.0%   </span>   af2df036c031ceb2     af2df036c031ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      146          147       <span class="r7">  100.0%   </span>   af2df036c031ceb2     af2df036c031ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      147          148       <span class="r7">  100.0%   </span>   af2df036c031ceb2     af2df036c031ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      148          149       <span class="r7">  100.0%   </span>   af2df036c031ceb2     af2df036c031ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      149          150       <span class="r7">  100.0%   </span>   af2df036c031ceb2     af2df036c031ceb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      150          151       <span class="r7">  100.0%   </span>   af2df036c031cf32     af2df036c031cf32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      151          152       <span class="r7">  100.0%   </span>   af2df036c431ce32     af2df036c431ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      152          153       <span class="r7">  100.0%   </span>   af2df036c431ce32     af2df036c431ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      153          154       <span class="r7">  100.0%   </span>   af2df036c431ce32     af2df036c431ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      154          155       <span class="r7">  100.0%   </span>   af2df036c431ce32     af2df036c431ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      155          156       <span class="r7">  100.0%   </span>   af2df036c431ce32     af2df036c431ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      156          157       <span class="r7">  100.0%   </span>   af2df136c031ce32     af2df136c031ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      157          158       <span class="r7">  100.0%   </span>   af2df136c031ce32     af2df136c031ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      158          159       <span class="r7">  100.0%   </span>   af2df136c031ce32     af2df136c031ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      159          160       <span class="r7">  100.0%   </span>   af2df136c031ce32     af2df136c031ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      160          161       <span class="r7">  100.0%   </span>   af2df136c031ce32     af2df136c031ce32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      161          162       <span class="r7">  100.0%   </span>   af2de136c931cc32     af2de136c931cc32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      162          163       <span class="r7">  100.0%   </span>   af2de136c131ccb2     af2de136c131ccb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      163          164       <span class="r7">  100.0%   </span>   af2de136c1334cb2     af2de136c1334cb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      164          165       <span class="r7">  100.0%   </span>   ae2de136d1330cb3     ae2de136d1330cb3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      165          166       <span class="r7">  100.0%   </span>   ac2de136d1330cf3     ac2de136d1330cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      166          167       <span class="r7">  100.0%   </span>   ac2de136d1330cf3     ac2de136d1330cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      167          168       <span class="r7">  100.0%   </span>   ac2de136d3310cf3     ac2de136d3310cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      168          169       <span class="r7">  100.0%   </span>   ac2de136d3300df3     ac2de136d3300df3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      169          170       <span class="r7">  100.0%   </span>   ac29e136d334cdb2     ac29e136d334cdb2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      170          171       <span class="r7">  100.0%   </span>   ac29e136d324cdb3     ac29e136d324cdb3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      171          172       <span class="r7">  100.0%   </span>   ac29e316d32ccd33     ac29e316d32ccd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      172          173       <span class="r7">  100.0%   </span>   ac29e316d32ccd33     ac29e316d32ccd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      173          174       <span class="r7">  100.0%   </span>   ac29e316d32ccd33     ac29e316d32ccd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      174          175       <span class="r7">  100.0%   </span>   ac29e396d22ccd33     ac29e396d22ccd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      175          176       <span class="r7">  100.0%   </span>   ac29e396d22ccd33     ac29e396d22ccd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      176          177       <span class="r7">  100.0%   </span>   ac29e396d62ccd32     ac29e396d62ccd32   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      177          178       <span class="r7">  100.0%   </span>   ac29e396d624cd33     ac29e396d624cd33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      178          179       <span class="r7">  100.0%   </span>   ac29e396d6258d33     ac29e396d6258d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      179          180       <span class="r7">  100.0%   </span>   ac29e396d6258d33     ac29e396d6258d33   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      180          181       <span class="r7">  100.0%   </span>   ac29e396d6258db1     ac29e396d6258db1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      181          182       <span class="r7">  100.0%   </span>   ac29e396d62c8db1     ac29e396d62c8db1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      182          183       <span class="r7">  100.0%   </span>   ac29e396d62cad91     ac29e396d62cad91   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      183          184       <span class="r7">  100.0%   </span>   ac29e396d62cad91     ac29e396d62cad91   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      184          185       <span class="r7">  100.0%   </span>   b92be796462c8d91     b92be796462c8d91   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      185          186       <span class="r7">  100.0%   </span>   b92be7964429a999     b92be7964429a999   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      186          187       <span class="r7">   96.9%   </span>   b92be794443999c3     b92be794442999cb   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      187          188       <span class="r7">  100.0%   </span>   b92be69444999b63     b92be69444999b63   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      188          189       <span class="r7">  100.0%   </span>   b92fe69444999e61     b92fe69444999e61   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      189          190       <span class="r7">  100.0%   </span>   b92fe6144c939663     b92fe6144c939663   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      190          191       <span class="r7">   96.9%   </span>   b92fe6154d939642     b92fe6144d939662   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      191          192       <span class="r7">  100.0%   </span>   b92fe63549939622     b92fe63549939622   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      192          193       <span class="r7">  100.0%   </span>   b92fe73449939622     b92fe73449939622   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      193          194       <span class="r7">  100.0%   </span>   b92ee734499396a2     b92ee734499396a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      194          195       <span class="r7">  100.0%   </span>   b92de734499196a6     b92de734499196a6   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      195          196       <span class="r7">  100.0%   </span>   b92de635599196a2     b92de635599196a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      196          197       <span class="r7">  100.0%   </span>   b82de6395b9196a2     b82de6395b9196a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      197          198       <span class="r7">  100.0%   </span>   b82de6395b9196a2     b82de6395b9196a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      198          199       <span class="r7">  100.0%   </span>   b82de6395b9394a2     b82de6395b9394a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      199          200       <span class="r7">  100.0%   </span>   b82de6395b92b4a2     b82de6395b92b4a2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      200          201       <span class="r7">  100.0%   </span>   b82de5395ab294a3     b82de5395ab294a3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      201          202       <span class="r7">  100.0%   </span>   b82de539d2b2a4e1     b82de539d2b2a4e1   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      202          203       <span class="r7">  100.0%   </span>   b82de53bd2b0a463     b82de53bd2b0a463   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      203          204       <span class="r7">  100.0%   </span>   b82de53bd6b02463     b82de53bd6b02463   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      204          205       <span class="r7">  100.0%   </span>   b82de53ad4b10d63     b82de53ad4b10d63   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      205          206       <span class="r7">  100.0%   </span>   b82de732d4b10d63     b82de732d4b10d63   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      206          207       <span class="r7">  100.0%   </span>   b82de7b2d4b10da2     b82de7b2d4b10da2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      207          208       <span class="r7">  100.0%   </span>   b82de3b2d4b10da3     b82de3b2d4b10da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      208          209       <span class="r7">  100.0%   </span>   b82de3b2d4b10da3     b82de3b2d4b10da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      209          210       <span class="r7">  100.0%   </span>   b82de3b2d4b10da3     b82de3b2d4b10da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      210          211       <span class="r7">  100.0%   </span>   b82de3b2d4b10da3     b82de3b2d4b10da3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      211          212       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      212          213       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      213          214       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      214          215       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      215          216       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      216          217       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      217          218       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      218          219       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      219          220       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      220          221       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      221          222       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      222          223       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      223          224       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      224          225       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      225          226       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      226          227       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      227          228       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      228          229       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      229          230       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      230          231       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      231          232       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      232          233       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      233          234       <span class="r7">  100.0%   </span>   807e8f18e39c83fa     807e8f18e39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      234          235       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      235          236       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      236          237       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      237          238       <span class="r7">  100.0%   </span>   807e8f18e19e83fa     807e8f18e19e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      238          239       <span class="r7">  100.0%   </span>   807e8f18c19e8bfa     807e8f18c19e8bfa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      239          240       <span class="r7">  100.0%   </span>   807e8f18c99e83fa     807e8f18c99e83fa   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      240          241       <span class="r7">   96.9%   </span>   807ecf18e19c83fa     807ecf18e39c83f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      241          242       <span class="r7">  100.0%   </span>   807ecf18e39c83f8     807ecf18e39c83f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      242          243       <span class="r7">  100.0%   </span>   807ecf18e39c83f8     807ecf18e39c83f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      243          244       <span class="r7">  100.0%   </span>   807ccf58e39ca3d8     807ccf58e39ca3d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      244          245       <span class="r7">  100.0%   </span>   807ccf58e39ca3d8     807ccf58e39ca3d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      245          246       <span class="r7">  100.0%   </span>   807cc758f39c23dc     807cc758f39c23dc   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      246          247       <span class="r7">  100.0%   </span>   807cc758f39c23f8     807cc758f39c23f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      247          248       <span class="r7">  100.0%   </span>   807c8758f39c23fa     807c8758f39c23fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      248          249       <span class="r7">  100.0%   </span>   807c8758f39c83fa     807c8758f39c83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      249          250       <span class="r7">  100.0%   </span>   807c8758e39e83fa     807c8758e39e83fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      250          251       <span class="r7">  100.0%   </span>   807c0758e39f8cf3     807c0758e39f8cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      251          252       <span class="r7">  100.0%   </span>   807e0758f19b8cf3     807e0758f19b8cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      252          253       <span class="r7">  100.0%   </span>   807f0f58f8838cf3     807f0f58f8838cf3   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      253          254       <span class="r7">  100.0%   </span>   807f0f5bf8838ce2     807f0f5bf8838ce2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      254          255       <span class="r7">  100.0%   </span>   80771e53fca38ce2     80771e53fca38ce2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      255          256       <span class="r7">  100.0%   </span>   80771c53fca38cea     80771c53fca38cea   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      256          257       <span class="r7">  100.0%   </span>   80771c43fca38bf8     80771c43fca38bf8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      257          258       <span class="r7">  100.0%   </span>   80771c53dcb38bd8     80771c53dcb38bd8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      258          259       <span class="r7">  100.0%   </span>   80771c53dcb38bd8     80771c53dcb38bd8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      259          260       <span class="r7">  100.0%   </span>   80771c53dcb387d8     80771c53dcb387d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      260          261       <span class="r7">  100.0%   </span>   80771c53dcb687d8     80771c53dcb687d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      261          262       <span class="r7">  100.0%   </span>   80771c53ddb8a3d8     80771c53ddb8a3d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      262          263       <span class="r7">  100.0%   </span>   80771d53dd9827d8     80771d53dd9827d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      263          264       <span class="r7">  100.0%   </span>   80771f52dd9827d8     80771f52dd9827d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      264          265       <span class="r7">  100.0%   </span>   80771f52dd9827d8     80771f52dd9827d8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      265          266       <span class="r7">  100.0%   </span>   80771f52db9823f8     80771f52db9823f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      266          267       <span class="r7">  100.0%   </span>   80771f52cb9c23f8     80771f52cb9c23f8   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      267          268       <span class="r7">  100.0%   </span>   80770f50eb9c23fc     80770f50eb9c23fc   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      268          269       <span class="r7">  100.0%   </span>   80770f50eb9c23ee     80770f50eb9c23ee   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      269          270       <span class="r7">  100.0%   </span>   80770f52e39c23ee     80770f52e39c23ee   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      270          271       <span class="r7">  100.0%   </span>   80770f52f39c23ea     80770f52f39c23ea   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      271          272       <span class="r7">  100.0%   </span>   80750f5af39c23ea     80750f5af39c23ea   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      272          273       <span class="r7">  100.0%   </span>   80750f58f39ca3ea     80750f58f39ca3ea   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      273          274       <span class="r7">  100.0%   </span>   80750f5cf38ca3ea     80750f5cf38ca3ea   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      274          275       <span class="r7">  100.0%   </span>   82740f4cf38ca3fa     82740f4cf38ca3fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      275          276       <span class="r7">  100.0%   </span>   827c0b4ef38ca2fa     827c0b4ef38ca2fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      276          277       <span class="r7">  100.0%   </span>   827c0b4ef38ca2fa     827c0b4ef38ca2fa   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      277          278       <span class="r7">  100.0%   </span>   827c0b4ef38da2ba     827c0b4ef38da2ba   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      278          279       <span class="r7">  100.0%   </span>   827c0b5ef38da2b2     827c0b5ef38da2b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      279          280       <span class="r7">  100.0%   </span>   827c4b5cf38d26b2     827c4b5cf38d26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      280          281       <span class="r7">  100.0%   </span>   827c4b5cf38d26b2     827c4b5cf38d26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      281          282       <span class="r7">  100.0%   </span>   827c435ef28d26f2     827c435ef28d26f2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      282          283       <span class="r7">  100.0%   </span>   827c435ef28d26f2     827c435ef28d26f2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      283          284       <span class="r7">  100.0%   </span>   827c435ef28d26f2     827c435ef28d26f2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      284          285       <span class="r7">  100.0%   </span>   827c435ef28d26f2     827c435ef28d26f2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      285          286       <span class="r7">  100.0%   </span>   827c435ef38d26b2     827c435ef38d26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      286          287       <span class="r7">  100.0%   </span>   827c435ef38d26b2     827c435ef38d26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      287          288       <span class="r7">  100.0%   </span>   827c435ef38d26b2     827c435ef38d26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      288          289       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      289          290       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      290          291       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      291          292       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      292          293       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      293          294       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      294          295       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      295          296       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      296          297       <span class="r7">  100.0%   </span>   827c435ef3cd06b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      297          298       <span class="r7">  100.0%   </span>   827c435ef3cd06b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      298          299       <span class="r7">  100.0%   </span>   827c435ef3cd06b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      299          300       <span class="r7">  100.0%   </span>   827c435ef3cd06b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      300          301       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      301          302       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      302          303       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      303          304       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      304          305       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      305          306       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      306          307       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      307          308       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      308          309       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      309          310       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      310          311       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      311          312       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      312          313       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      313          314       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      314          315       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      315          316       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      316          317       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      317          318       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      318          319       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      319          320       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      320          321       <span class="r7">   96.9%   </span>   827c435cf3cd26b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r6">SUBSTITUTION  </span><span class="r3"> </span>      321          322       <span class="r7">   96.9%   </span>   827c435cf3cd26b2     827c435ef3cd06b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      322          323       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      323          324       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      324          325       <span class="r7">  100.0%   </span>   827c435cf3cd26b2     827c435cf3cd26b2   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      325          326       <span class="r7">  100.0%   </span>   c15b53a92cd17d70     c15b53a92cd17d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      326          327       <span class="r7">  100.0%   </span>   c15f53a924d17d70     c15f53a924d17d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      327          328       <span class="r7">  100.0%   </span>   c15f53a924537d70     c15f53a924537d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      328          329       <span class="r7">  100.0%   </span>   c15f53a924d33d70     c15f53a924d33d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      329          330       <span class="r7">  100.0%   </span>   c15b53a92cd33d70     c15b53a92cd33d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      330          331       <span class="r7">  100.0%   </span>   c15b53a92cd17d70     c15b53a92cd17d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      331          332       <span class="r7">  100.0%   </span>   c15b53a92cd17d70     c15b53a92cd17d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      332          333       <span class="r7">  100.0%   </span>   c15b53a924d37d70     c15b53a924d37d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      333          334       <span class="r7">  100.0%   </span>   c15b53a924d37d70     c15b53a924d37d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      334          335       <span class="r7">  100.0%   </span>   c15b53a92cd37d30     c15b53a92cd37d30   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      335          336       <span class="r7">  100.0%   </span>   c15b53a92cd37d30     c15b53a92cd37d30   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      336          337       <span class="r7">  100.0%   </span>   c15b53a92cd33d70     c15b53a92cd33d70   
+ <span class="r3"> </span><span class="r11">MATCH         </span><span class="r3"> </span>      337          338       <span class="r7">  100.0%   </span>   c15b53a92cd33d70     c15b53a92cd33d70   
+                                                                                                    
+
+<span class="r1">📊 Final Summary</span>
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span class="r3"> Metric                                                              </span>┃<span class="r3">                      Value </span>┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃<span class="r3"> Frames Analyzed                                                     </span>┃                        338 ┃
+┃<span class="r3"> Overall Average Similarity                                          </span>┃                     99.59% ┃
+┃<span class="r3"> Minimum Similarity                                                  </span>┃                      0.00% ┃
+┃<span class="r3"> Maximum Similarity                                                  </span>┃                    100.00% ┃
+┃<span class="r3"> Avg Substitution Similarity                                         </span>┃                     96.88% ┃
+┃<span class="r3">                                                                     </span>┃                            ┃
+┃<span class="r11"> High Similarity (≥80%)                                              </span>┃<span class="r7">                 337 frames </span>┃
+┃<span class="r6"> Medium Similarity (50-79%)                                          </span>┃<span class="r8">                   0 frames </span>┃
+┃<span class="r12"> Low Similarity (&lt;50%)                                               </span>┃<span class="r4">                   1 frames </span>┃
+┃<span class="r3">                                                                     </span>┃                            ┃
+┃<span class="r3"> Identical Frames                                                    </span>┃                    325/338 ┃
+┃<span class="r3"> Total Modifications                                                 </span>┃                         13 ┃
+┃<span class="r12"> Extra Frames Added                                                  </span>┃<span class="r4">                          1 </span>┃
+┃<span class="r6"> Frames Modified                                                     </span>┃<span class="r8">                         12 </span>┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+</code></pre>
+</body>
+</html>

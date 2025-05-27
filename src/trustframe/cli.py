@@ -53,7 +53,7 @@ def analyze(
     """
     Analyze two video files for differences using cryptographic and perceptual hashing.
     """
-    console = Console()
+    console = Console(record=True, width=100)
     try:
         # Display application banner
         banner = pyfiglet.figlet_format("TrustFrame", font="slant")
@@ -71,12 +71,10 @@ def analyze(
 
         # Display cryptographic hash comparison results
         crypto_table = Table(title=f"{crypto_algorithm.name} Hash Summary", box=box.ROUNDED, expand=True)
-        crypto_table.add_column("Reference", no_wrap=False, overflow="fold")
-        crypto_table.add_column("Evidence", no_wrap=False, overflow="fold")
-
-        # Color-code the match result
         value_style = "green" if original_hash == evidence_hash else "red"
-        crypto_table.add_column("Match", style=value_style, no_wrap=False, overflow="fold")
+        crypto_table.add_column("Reference", style=value_style, no_wrap=False, overflow="fold")
+        crypto_table.add_column("Evidence", style=value_style, no_wrap=False, overflow="fold")
+        crypto_table.add_column("Match", style=value_style, )
 
         crypto_table.add_row(
             original_hash,
@@ -87,11 +85,11 @@ def analyze(
 
         # === PERCEPTUAL HASH ANALYSIS ===
         # This section performs content-aware analysis of video frames
-        console.print(f"\n[bold magenta]👁️  Perceptual Hash Analysis ({perceptual_algorithm.name})[/bold magenta]")
+        console.print(f"\n[bold cyan]👁️  Perceptual Hash Analysis ({perceptual_algorithm.name})[/bold cyan]")
         perceptual_hasher = PerceptualHasher(perceptual_algorithm)
 
         # Get basic information about both videos
-        console.print(f"\n[bold blue]Getting video information...[/bold blue]")
+        console.print(f"\n[bold deep_sky_blue4]Getting video information...[/bold deep_sky_blue4]")
         ref_info = perceptual_hasher.get_video_info(reference)
         ev_info = perceptual_hasher.get_video_info(evidence)
 
@@ -127,11 +125,11 @@ def analyze(
             console.print(f"\n[bold yellow]Analyzing all frames from both videos[/bold yellow]")
 
         # Analyze reference video
-        console.print(f"\n[bold blue]Analyzing reference video: {reference.name}[/bold blue]")
+        console.print(f"\n[bold deep_sky_blue4]Analyzing reference video[/bold deep_sky_blue4]")
         reference_analysis = perceptual_hasher.analyze_video(reference, target_frames)
 
         # Analyze evidence video
-        console.print(f"\n[bold blue]Analyzing evidence video: {evidence.name}[/bold blue]")
+        console.print(f"\n[bold deep_sky_blue4]Analyzing evidence video[/bold deep_sky_blue4]")
         evidence_analysis = perceptual_hasher.analyze_video(evidence, target_frames)
 
         # === ADVANCED SEQUENCE ANALYSIS ===
@@ -155,21 +153,21 @@ def analyze(
         stats_table.add_column("Count", justify="right")
         stats_table.add_column("Description")
 
-        stats_table.add_row("Matches", str(stats['matches']), "Identical frames in same position")
+        stats_table.add_row("Matches", str(stats['matches']), "Identical frames in same position", style="green")
         stats_table.add_row("Substitutions", str(stats['substitutions']),
                             "Different frames in same position", style="yellow")
         stats_table.add_row("Insertions", str(stats['insertions']),
-                            "Extra frames in evidence video", style="red")
+                            "Extra frames in evidence video", style="blue")
         stats_table.add_row("Deletions", str(stats['deletions']),
                             "Missing frames from evidence video", style="red")
         stats_table.add_row("Edit Distance", str(edit_distance),
-                            "Total operations needed to transform reference to evidence", style="red")
+                            "Total operations needed to transform reference to evidence", style="magenta")
 
         console.print(stats_table)
 
         # === DETAILED ALIGNMENT DISPLAY ===
         # Show detailed frame-by-frame comparison (limited to first 1000 for performance)
-        console.print(f"\n[bold magenta]📋 Detailed Alignment[/bold magenta]")
+        console.print(f"\n[bold cyan]📋 Detailed Alignment[/bold cyan]")
 
         alignment_table = Table(box=box.SIMPLE, expand=True)
         alignment_table.add_column("Operation", style="bold")
@@ -180,7 +178,7 @@ def analyze(
         alignment_table.add_column("Ev Hash", no_wrap=False, overflow="fold")
 
         # Process alignment results and calculate similarity scores
-        for i, op in enumerate(alignment[:10]):  # Limit to 1000 for performance
+        for i, op in enumerate(alignment):
             # Color-code operations by type
             operation_style = {
                 'match': 'green',
@@ -232,10 +230,6 @@ def analyze(
 
         console.print(alignment_table)
 
-        # Show truncation notice if needed
-        if len(alignment) > 10:
-            console.print(f"[dim]... and {len(alignment) - 10} more operations[/dim]")
-
         # === STATISTICAL ANALYSIS ===
         # Calculate comprehensive similarity statistics
         total_analyzed_frames = max(
@@ -281,7 +275,7 @@ def analyze(
 
         # === FINAL SUMMARY ===
         # Present comprehensive analysis results
-        console.print(f"\n[bold green]📊 Final Summary[/bold green]")
+        console.print(f"\n[bold cyan]📊 Final Summary[/bold cyan]")
         summary_table = Table(box=box.HEAVY, expand=True)
         summary_table.add_column("Metric", style="bold")
         summary_table.add_column("Value", justify="right")
@@ -320,6 +314,7 @@ def analyze(
 
         console.print(summary_table)
 
+        console.save_html("report.html")
     except Exception as e:
         console.print(f"[bold red]Error: {e}[/bold red]")
         sys.exit(1)

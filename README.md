@@ -38,7 +38,7 @@ pip install opencv-python pillow imagehash typer rich pyfiglet
 ### Basic Command
 
 ```bash
-python cli.py <reference_video> <evidence_video> [OPTIONS]
+poetry run trustframe  <reference_video> <evidence_video> [OPTIONS]
 ```
 
 ### Command Line Options
@@ -53,12 +53,12 @@ python cli.py <reference_video> <evidence_video> [OPTIONS]
 
 **Basic comparison:**
 ```bash
-python cli.py original.mp4 modified.mp4
+poetry run trustframe  original.mp4 modified.mp4
 ```
 
 **Using SHA-512 and dHash with frame limit:**
 ```bash
-python cli.py original.mp4 modified.mp4 --crypto-algorithm sha512 --perceptual-algorithm dhash --max-frames 1000
+poetry run trustframe  original.mp4 modified.mp4 --crypto-algorithm sha512 --perceptual-algorithm dhash --max-frames 1000
 ```
 
 ## Architecture
